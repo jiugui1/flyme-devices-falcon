@@ -594,9 +594,9 @@
         <item>mobile_fota,10,0,2,60000,true</item>
         <item>mobile_ims,11,0,2,60000,true</item>
         <item>mobile_cbs,12,0,2,60000,true</item>
-        <item>wifi_p2p,13,1,0,-1,true</item>
         <item>mobile_ia,14,0,2,-1,true</item>
-        <item>mobile_emergency,15,0,2,-1,true</item>
+        <item>bluetooth,7,7,2,-1,true</item>
+        <item>ethernet,9,9,9,-1,true</item>
     </string-array>
     <integer-array name="config_protectedNetworks">
         <item>10</item>
@@ -608,6 +608,8 @@
     <string-array name="radioAttributes">
         <item>1,1</item>
         <item>0,1</item>
+        <item>7,1</item>
+        <item>9,1</item>
     </string-array>
     <integer-array name="config_data_usage_network_types">
         <item>0</item>
@@ -621,14 +623,15 @@
         <item>14</item>
     </integer-array>
     <string-array name="config_tether_usb_regexs">
+        <item>usb\\d</item>
         <item>rndis\\d</item>
     </string-array>
     <string-array name="config_tether_wifi_regexs">
         <item>wlan0</item>
+        <item>softap.*</item>
     </string-array>
     <array name="config_tether_wimax_regexs" />
     <string-array name="config_tether_bluetooth_regexs">
-        <item>bnep\\d</item>
         <item>bt-pan</item>
     </string-array>
     <array name="config_tether_dhcp_range" />
@@ -636,7 +639,6 @@
     <integer-array name="config_tether_upstream_types">
         <item>0</item>
         <item>1</item>
-        <item>4</item>
         <item>5</item>
         <item>7</item>
     </integer-array>
@@ -646,15 +648,16 @@
     <array name="config_serialPorts" />
     <integer-array name="config_longPressVibePattern">
         <item>0</item>
-        <item>1</item>
-        <item>20</item>
-        <item>21</item>
+        <item>7</item>
+        <item>10</item>
     </integer-array>
     <integer-array name="config_virtualKeyVibePattern">
-        <item>18</item>
+        <item>0</item>
+        <item>5</item>
+        <item>10</item>
     </integer-array>
     <integer-array name="config_keyboardTapVibePattern">
-        <item>18</item>
+        <item>10</item>
     </integer-array>
     <integer-array name="config_clockTickVibePattern">
         <item>125</item>
@@ -680,36 +683,45 @@
     </integer-array>
     <integer-array name="config_scrollBarrierVibePattern">
         <item>0</item>
-        <item>20</item>
-        <item>60</item>
-        <item>20</item>
+        <item>15</item>
+        <item>10</item>
+        <item>10</item>
     </integer-array>
     <integer-array name="config_autoBrightnessLevels">
-        <item>50</item>
-        <item>100</item>
-        <item>150</item>
-        <item>200</item>
-        <item>800</item>
-        <item>1300</item>
-        <item>2000</item>
+        <item>1</item>
+        <item>4</item>
+        <item>40</item>
+        <item>350</item>
+        <item>600</item>
+        <item>1000</item>
+        <item>1600</item>
         <item>3000</item>
-        <item>4000</item>
-        <item>8000</item>
+        <item>10000</item>
     </integer-array>
     <integer-array name="config_autoBrightnessLcdBacklightValues">
-        <item>24</item>
-        <item>36</item>
-        <item>47</item>
-        <item>71</item>
-        <item>118</item>
-        <item>141</item>
-        <item>165</item>
-        <item>188</item>
-        <item>212</item>
-        <item>230</item>
+        <item>13</item>
+        <item>26</item>
+        <item>73</item>
+        <item>88</item>
+        <item>130</item>
+        <item>167</item>
+        <item>204</item>
+        <item>240</item>
+        <item>254</item>
         <item>255</item>
     </integer-array>
-    <array name="config_autoBrightnessButtonBacklightValues" />
+    <integer-array name="config_autoBrightnessButtonBacklightValues">
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+    </integer-array>
     <array name="config_autoBrightnessKeyboardBacklightValues" />
     <string-array name="config_locationProviderPackageNames">
         <item>com.google.android.gms</item>
@@ -720,7 +732,11 @@
     <array name="config_sms_enabled_single_shift_tables" />
     <array name="config_sms_enabled_locking_shift_tables" />
     <array name="config_oemUsbModeOverride" />
-    <array name="config_mobile_tcp_buffers" />
+    <string-array name="config_mobile_tcp_buffers">
+        <item>hsdpa:4094,87380,704512,4096,16384,110208</item>
+        <item>hspa:4094,87380,704512,4096,16384,110208</item>
+        <item>hsupa:4094,87380,704512,4096,16384,110208</item>
+    </string-array>
     <integer-array name="config_onlySingleDcAllowed">
         <item>4</item>
         <item>5</item>

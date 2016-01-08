@@ -34,6 +34,7 @@ ro.wifi.channels=
 ro.board.platform=msm8226
 ro.build.characteristics=default
 ro.cm.device=falcon
+ro.product.device=falcon
 # end build properties
 #
 # from device/motorola/msm8226-common/system.prop
